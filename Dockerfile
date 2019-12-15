@@ -1,0 +1,9 @@
+FROM java:8
+
+ENV PROJECT_ARTIFACTID="smczuul" PROJECT_VERSION="0.0.1-SNAPSHOT"
+
+COPY target/$PROJECT_ARTIFACTID-$PROJECT_VERSION.jar /smczuul.jar
+
+EXPOSE 8088
+
+ENTRYPOINT ["java", "-jar", "smczuul.jar"]
